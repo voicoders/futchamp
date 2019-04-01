@@ -4,7 +4,8 @@ from flask_bcrypt import Bcrypt
 
 from .config import config_by_name
 
-from .controller.home_controller import home_page
+# from .controller.home_controller import home_page
+from .controller.home_controller import construct_home
 
 
 db = SQLAlchemy()
@@ -17,6 +18,8 @@ def create_app(config_name):
     db.init_app(app)
     flask_bcrypt.init_app(app)
 
-    app.register_blueprint(home_page, path='/')
+    # app.register_blueprint(home_page, path='/')
+    app.register_blueprint(construct_home(config_name), path='/')
+
 
     return app

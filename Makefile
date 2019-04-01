@@ -1,7 +1,14 @@
-.PHONY: activate clean system-packages python-packages install tests run all
+.PHONY: testenv devenv activate clean system-packages python-packages install tests run all
+
+testenv:
+	python constants.py set_constants test
+
+devenv:
+	python constants.py set_constants dev
 
 activate:
-	.\venv\Scripts\activate
+	cd .\venv\Scripts\
+	activate
 
 clean:
 	find . -type f -name '*.pyc' -delete
