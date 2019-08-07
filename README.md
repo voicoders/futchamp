@@ -20,7 +20,7 @@ install requirements:<br/>
     pip install -r requirements.txt
 
 Set the environment:<br/>
-    for the test environment (the one that uses a sqlite file on your machine): python constants.py set_constants test
+    for the test environment (the one that uses a sqlite file on your machine): python constants.py set_constants test<br/>
     for the dev environment (the one that uses postgres on heroku server): python constants.py set_constants dev
 
 Run:<br/>
